@@ -113,20 +113,29 @@
 
 <h1 class="govuk-heading-xl"></h1>
 
-            <p class="govuk-body">Showing 1 records.</p>
 
-            <table class="dl-index-list">
-  <tbody><tr>
+    <div class="index-list-wrapper">
+            <div class="count-wrapper">
+                <p class="govuk-body" aria-hidden="true">Showing <span class="js-list-count">1</span> records.</p>
+                <p class="govuk-visually-hidden">There are
+                    <span class="js-accessible-list-count">1</span>
+                    records listed.
+                </p>
+            </div>
+
+            <table class="dl-index-list" data-filter="list">
+  <tbody><tr data-filter="item">
   <td>
-    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./neigh-plan-buc-dawshillndp">neigh-plan-buc-dawshillndp</a></h4>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./neigh-plan-buc-dawshillndp" data-filter="match-content">neigh-plan-buc-dawshillndp</a></h4>
   </td>
   <td>
-    <p class="govuk-body govuk-!-margin-bottom-0">The Daws Hill Neighbourhood Plan December 2019</p>
+    <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">The Daws Hill Neighbourhood Plan December 2019</p>
   </td>
 </tr></tbody>
 </table>
 
 
+    </div>
 
         </main>
       </div>
@@ -204,6 +213,7 @@
 		// adds any necessary polyfills
 		window.DLFrontend.polyfill();
 	</script>
+
 
 
 

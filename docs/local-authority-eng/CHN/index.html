@@ -113,27 +113,36 @@
 
 <h1 class="govuk-heading-xl"></h1>
 
-            <p class="govuk-body">Showing 2 records.</p>
 
-            <table class="dl-index-list">
-  <tbody><tr>
+    <div class="index-list-wrapper">
+            <div class="count-wrapper">
+                <p class="govuk-body" aria-hidden="true">Showing <span class="js-list-count">2</span> records.</p>
+                <p class="govuk-visually-hidden">There are
+                    <span class="js-accessible-list-count">2</span>
+                    records listed.
+                </p>
+            </div>
+
+            <table class="dl-index-list" data-filter="list">
+  <tbody><tr data-filter="item">
   <td>
-    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-buc-ccs">dev-plan-buc-ccs</a></h4>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-buc-ccs" data-filter="match-content">dev-plan-buc-ccs</a></h4>
   </td>
   <td>
-    <p class="govuk-body govuk-!-margin-bottom-0">Adopted Chiltern Core Strategy 2011</p>
+    <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Adopted Chiltern Core Strategy 2011</p>
   </td>
-</tr><tr>
+</tr><tr data-filter="item">
   <td>
-    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-buc-clp">dev-plan-buc-clp</a></h4>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-buc-clp" data-filter="match-content">dev-plan-buc-clp</a></h4>
   </td>
   <td>
-    <p class="govuk-body govuk-!-margin-bottom-0">Adopted Chiltern Local Plan 1997</p>
+    <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Adopted Chiltern Local Plan 1997</p>
   </td>
 </tr></tbody>
 </table>
 
 
+    </div>
 
         </main>
       </div>
@@ -211,6 +220,7 @@
 		// adds any necessary polyfills
 		window.DLFrontend.polyfill();
 	</script>
+
 
 
 

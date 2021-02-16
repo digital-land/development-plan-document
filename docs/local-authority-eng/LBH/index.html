@@ -113,34 +113,43 @@
 
 <h1 class="govuk-heading-xl"></h1>
 
-            <p class="govuk-body">Showing 3 records.</p>
 
-            <table class="dl-index-list">
-  <tbody><tr>
+    <div class="index-list-wrapper">
+            <div class="count-wrapper">
+                <p class="govuk-body" aria-hidden="true">Showing <span class="js-list-count">3</span> records.</p>
+                <p class="govuk-visually-hidden">There are
+                    <span class="js-accessible-list-count">3</span>
+                    records listed.
+                </p>
+            </div>
+
+            <table class="dl-index-list" data-filter="list">
+  <tbody><tr data-filter="item">
   <td>
-    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-DRLLP">dev-plan-DRLLP</a></h4>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-DRLLP" data-filter="match-content">dev-plan-DRLLP</a></h4>
   </td>
   <td>
-    <p class="govuk-body govuk-!-margin-bottom-0">Revised Draft Lambeth Local Plan</p>
+    <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Revised Draft Lambeth Local Plan</p>
   </td>
-</tr><tr>
+</tr><tr data-filter="item">
   <td>
-    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-LP-2015">dev-plan-LP-2015</a></h4>
-  </td>
-  <td>
-    <p class="govuk-body govuk-!-margin-bottom-0">Lambeth Adopted Local Plan</p>
-  </td>
-</tr><tr>
-  <td>
-    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./neigh-plan-sown">neigh-plan-sown</a></h4>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./dev-plan-LP-2015" data-filter="match-content">dev-plan-LP-2015</a></h4>
   </td>
   <td>
-    <p class="govuk-body govuk-!-margin-bottom-0">Southbank Waterloo Neighbourhood Plan</p>
+    <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Lambeth Adopted Local Plan</p>
+  </td>
+</tr><tr data-filter="item">
+  <td>
+    <h4 class="govuk-heading-s govuk-!-font-weight-regular dl-break-word govuk-!-margin-bottom-0"><a class="govuk-link" href="./neigh-plan-sown" data-filter="match-content">neigh-plan-sown</a></h4>
+  </td>
+  <td>
+    <p class="govuk-body govuk-!-margin-bottom-0" data-filter="match-content">Southbank Waterloo Neighbourhood Plan</p>
   </td>
 </tr></tbody>
 </table>
 
 
+    </div>
 
         </main>
       </div>
@@ -218,6 +227,7 @@
 		// adds any necessary polyfills
 		window.DLFrontend.polyfill();
 	</script>
+
 
 
 
