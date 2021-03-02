@@ -1,15 +1,3 @@
 {% extends "digital-land-frontend/page-per-thing/index.html" %}
 
 {% set filterInputPlaceholder = "For example, Chiltern Local Plan" %}
-
-{% block bodyEnd %}
-{{ super() }}
-<script>
-    // initialise list filter
-    const $form = document.querySelector('[data-filter="form"]');
-    new window.DLFrontend.FilterList($form).init({
-        list_section_selector: '.index-list-wrapper',
-        count_wrapper_selector: '.count-wrapper'
-    })
-  </script>
-{% endblock %}
