@@ -6,13 +6,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c">     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-      <link rel="manifest" href="/site.webmanifest">
-      <link rel="shortcut icon" sizes="48x48" href="/images/favicon.ico" type="image/x-icon">
-      <link rel="shortcut icon" sizes="32x32" href="/images/favicon-32x32.png" type="image/png">
-      <link rel="shortcut icon" sizes="16x16" href="/images/favicon-16x16.png" type="image/png">
-      <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+<link rel="manifest" href="/site.webmanifest">
+<link rel="shortcut icon" sizes="48x48" href="/images/favicon.ico" type="image/x-icon">
+<link rel="shortcut icon" sizes="32x32" href="/images/favicon-32x32.png" type="image/png">
+<link rel="shortcut icon" sizes="16x16" href="/images/favicon-16x16.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+	<meta name="digital-land:template" content="page-per-thing/record.html">
 
-	<meta name="digital-land:template" content="page-per-thing/record.html">	<link href="https://digital-land.github.io/stylesheets/dl-frontend.css" rel="stylesheet" />    <meta property="og:image" content="/images/govuk-opengraph-image.png">
+<!-- should make this optional, no need to load if not showing a map -->
+<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
+integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
+crossorigin="" />
+
+<!-- Make sure you put this AFTER Leaflet's CSS -->
+<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
+	integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
+	crossorigin=""></script>
+
+<!-- assets needed for fullscreen maps -->
+<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
+
+<!-- script needed for recentring map -->
+<script src="https://digital-land.github.io/javascripts/Leaflet.recentre.js"></script>
+
+<script src="https://digital-land.github.io/javascripts/dl-maps.js"></script>	<link href="https://digital-land.github.io/stylesheets/dl-frontend.css" rel="stylesheet" />    <meta property="og:image" content="/images/govuk-opengraph-image.png">
   </head>
   <body class="govuk-template__body ">
     <script>document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');</script>
@@ -114,34 +132,52 @@
 
 <span class="govuk-caption-xl">development-plan-document</span>
     <h1 class="govuk-heading-xl">Wycombe District Local Plan 2019</h1>
+<div class="govuk-tabs" data-module="dlf-subnav">
+    <h2 class="govuk-tabs__title">
+      Contents
+    </h2>
+    <nav class="dlf-subnav" aria-label="Sub navigation">
+        <ul class="dlf-subnav__list">
+            <li class="dlf-subnav__list-item dlf-subnav__list-item--selected">
+                <a class="dlf-subnav__list-item__link" href="#record" data-module-sub-nav="tab">
+                Record
+                </a>
+            </li>
+            <li class="dlf-subnav__list-item">
+                <a class="dlf-subnav__list-item__link" href="#history" data-module-sub-nav="tab">
+                History
+                </a>
+            </li></ul>
+    </nav>
+
+<div id="record">
 <div class="govuk-grid-row">    <div class="govuk-grid-column-three-quarters"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/development-plan-document/local-authority-eng/BUC/dev-plan-buc-wdlp</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">name
+            </dt>
+            <dd class="govuk-summary-list__value">                Wycombe District Local Plan 2019            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">document-url
+            </dt>
+            <dd class="govuk-summary-list__value">                <a class="govuk-link" href="https://www.wycombe.gov.uk/uploads/public/documents/Planning/Adopted-Wycombe-local-plan/Wycombe-District-Local-Plan-Adopted-August-2019.pdf">https://www.wycombe.gov.uk/uploads/public/documents/Planning/Adopted-Wycombe-local-plan/Wycombe-District-Local-Plan-Adopted-August-2019.pdf</a>            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-plan-document
             </dt>
             <dd class="govuk-summary-list__value">                <span class="dl-select-all">dev-plan-buc-wdlp</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">name
+            <dt class="govuk-summary-list__key">end-date
             </dt>
-            <dd class="govuk-summary-list__value">                Wycombe District Local Plan 2019            </dd>
+            <dd class="govuk-summary-list__value">                2033-12-31            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">description
             </dt>
             <dd class="govuk-summary-list__value">                Covers former WDC area            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisations
+            <dt class="govuk-summary-list__key">geographies
             </dt>
-            <dd class="govuk-summary-list__value">                <ul class="govuk-list">
-                    <li><a href="https://digital-land.github.io/organisation/local-authority-eng/BUC" class="govuk-link">Buckinghamshire Council</a>
-<span title="Organisation identifier: local-authority-eng:BUC" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:BUC)</span>
-</li>
-                </ul>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">development-plan-types
-            </dt>
-            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/development-plan-type/local-plan" class="govuk-link">Local Plan</a>
-<span title="development-plan-types identifier: local-plan" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">development-plan-types identifier is </span>local-plan)</span>
-</div>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/local-authority-district/E07000007" class="govuk-link">Wycombe</a>
+<span title="Geography identifier: E07000007" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E07000007)</span>
             </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-policies
@@ -513,62 +549,44 @@
   </div>
 </details>            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">document-url
+            <dt class="govuk-summary-list__key">organisations
             </dt>
-            <dd class="govuk-summary-list__value">                <a class="govuk-link" href="https://www.wycombe.gov.uk/uploads/public/documents/Planning/Adopted-Wycombe-local-plan/Wycombe-District-Local-Plan-Adopted-August-2019.pdf">https://www.wycombe.gov.uk/uploads/public/documents/Planning/Adopted-Wycombe-local-plan/Wycombe-District-Local-Plan-Adopted-August-2019.pdf</a>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">geographies
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/local-authority-district/E07000007" class="govuk-link">Wycombe</a>
-<span title="Geography identifier: E07000007" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E07000007)</span>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">notes
-            </dt>
-            <dd class="govuk-summary-list__value">                            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">entry-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2020-12-08            </dd>
+            <dd class="govuk-summary-list__value">                <ul class="govuk-list">
+                    <li><a href="https://digital-land.github.io/organisation/local-authority-eng/BUC" class="govuk-link">Buckinghamshire Council</a>
+<span title="Organisation identifier: local-authority-eng:BUC" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:BUC)</span>
+</li>
+                </ul>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2020-04-01            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">end-date
+            <dt class="govuk-summary-list__key">development-plan-types
             </dt>
-            <dd class="govuk-summary-list__value">                2033-12-31            </dd>
+            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/development-plan-type/local-plan" class="govuk-link">Local Plan</a>
+<span title="development-plan-types identifier: local-plan" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">development-plan-types identifier is </span>local-plan)</span>
+</div>
+            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">entry-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2020-12-08            </dd>
         </div>    
-    </dl>    <footer class="govuk-!-font-size-16 data-record__resource">From resource <a href="https://github.com/digital-land/development-plan-document-collection/tree/main/transformed/development-plan-document/37236e7dbb9f3899ebf5f7c074827b210937a2a515ca426490dc6d364e087052.csv" class="govuk-link">37236e7dbb9f3899e...</a></footer>
-</article>
+    </dl></article>
 </div>
             
 </div>
 
+<p class="govuk-body">
+    <a href="https://digital-land.github.io/specification/schema/development-plan-document/">View the development-plan-document schema</a>
+</p>
 
-<!-- should make this optional, no need to load if not showing a map -->
-<link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
-integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
-crossorigin="" />
 
-<!-- Make sure you put this AFTER Leaflet's CSS -->
-<script src="https://unpkg.com/leaflet@1.6.0/dist/leaflet.js"
-	integrity="sha512-gZwIG9x3wUXg2hdXF6+rVkLF/0Vi9U8D2Ntg4Ga5I5BZpVkVxlJWbSQtXPSiUTtC0TjtGOmxa1AJPuV0CPthew=="
-	crossorigin=""></script>
-
-<!-- assets needed for fullscreen maps -->
-<script src='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/Leaflet.fullscreen.min.js'></script>
-<link href='https://api.mapbox.com/mapbox.js/plugins/leaflet-fullscreen/v1.0.1/leaflet.fullscreen.css' rel='stylesheet' />
-
-<!-- script needed for recentring map -->
-<script src="https://digital-land.github.io/javascripts/Leaflet.recentre.js"></script>
-
-<script src="https://digital-land.github.io/javascripts/dl-maps.js"></script>
     <h2 class="govuk-heading-m">Geographical area</h2>
 
     <div class="dl-map__wrapper"><div 
         class="dl-map govuk-!-margin-top-4 govuk-!-margin-bottom-2"
-        id="aMap"
+        id="dlMap"
         data-module="boundary-map"
         style="height: 460px;" data-geojson-urls="https://raw.githubusercontent.com/digital-land/local-authority-district/main/docs/E07000007/geometry.geojson"   
     >
@@ -579,9 +597,66 @@ crossorigin="" />
 
     <div class="govuk-!-margin-top-2">
         <a class="dl-page-action-button" href="https://raw.githubusercontent.com/digital-land/local-authority-district/main/docs/E07000007/geometry.geojson">Download geojson</a>
-    </div>        </main>
+    </div></div>
+
+<div id="history"><h2 class="govuk-heading-m govuk-!-margin-top-9">History</h2>
+<div class="data-table__wrapper" data-module="data-table">
+    <div class="data-table-left-shadow with-transition"></div>
+    <div class="wide-table">
+        <table class="data-table">
+    <thead>
+        <tr>
+            <th>entry-date</th>
+            <th>resource</th>
+            <th>line</th>
+            <th>organisations</th>
+            <th>development-policies</th>
+            <th>name</th>
+            <th>development-plan-types</th>
+            <th>development-plan-document</th>
+            <th>geographies</th>
+            <th>start-date</th>
+            <th>end-date</th>
+            <th>document-url</th>
+            <th>description</th>
+        </tr>
+    </thead>
+    <tbody>        <tr>
+            <td>2020-12-08</td>
+            <td><a href="https://github.com/digital-land/development-plan-document-collection/tree/main/transformed/development-plan-document/37236e7dbb9f3899ebf5f7c074827b210937a2a515ca426490dc6d364e087052.csv#L20">37236e7dbb9f...</a></td>
+            <td>19</td>
+                <td>local-authority-eng:BUC</td> 
+                <td>wdlp-CP1;wdlp-CP2;wdlp-CP3;wdlp-CP4;wdlp-CP5;wdlp-CP6;wdlp-CP7;wdlp-CP8;wdlp-CP9;wdlp-CP10;wdlp-CP11;wdlp-CP12;wdlp-HW4;wdlp-HW5;wdlp-HW6;wdlp-HW7;wdlp-HW8;wdlp-HW9;wdlp-HW10;wdlp-HW11;wdlp-HW12;wdlp-HW13;wdlp-HW14;wdlp-HW15;wdlp-HW16;wdlp-HW17;wdlp-HW18;wdlp-HW19;wdlp-HW20;wdlp-MR6;wdlp-MR7;wdlp-PR3;wdlp-PR4;wdlp-PR5;wdlp-PR6;wdlp-PR7;wdlp-PR8;wdlp-PR9;wdlp-PR10;wdlp-PR11;wdlp-PR12;wdlp-PR13;wdlp-PR14;wdlp-PR15;wdlp-PR16;wdlp-PR17;wdlp-BE1;wdlp-BE2;wdlp-BE3;wdlp-RUR1;wdlp-RUR2;wdlp-RUR3;wdlp-RUR4;wdlp-RUR5;wdlp-RUR6;wdlp-RUR7;wdlp-RUR8;wdlp-RUR9;wdlp-RUR10;wdlp-RUR11;wdlp-RUR12;wdlp-DM20;wdlp-DM21;wdlp-DM22;wdlp-DM23;wdlp-DM24;wdlp-DM25;wdlp-DM26;wdlp-DM27;wdlp-DM28;wdlp-DM29;wdlp-DM30;wdlp-DM31;wdlp-DM32;wdlp-DM33;wdlp-DM34;wdlp-DM35;wdlp-DM36;wdlp-DM37;wdlp-DM38;wdlp-DM39;wdlp-DM40;wdlp-DM41;wdlp-DM42;wdlp-DM43;wdlp-DM44;wdlp-DM45;wdlp-DM46;wdlp-DM47</td> 
+                <td>Wycombe District Local Plan 2019</td> 
+                <td>local-plan</td> 
+                <td>dev-plan-buc-wdlp</td> 
+                <td>E07000007</td> 
+                <td>2020-04-01</td> 
+                <td>2033-12-31</td> 
+                <td>https://www.wycombe.gov.uk/uploads/public/documents/Planning/Adopted-Wycombe-local-plan/Wycombe-District-Local-Plan-Adopted-August-2019.pdf</td> 
+                <td>Covers former WDC area</td> 
+        </tr>    </tbody>
+</table>
+
+    </div>
+    <div class="data-table-right-shadow visible with-transition"></div>
+</div>
+</div>        </main>
       </div>
 
+    <div class="dlf-feedback__wrapper">
+    <div class="dlf-feedback">
+    <div class="dlf-feedback__prompt">
+        <div class="dlf-feedback__prompt-content">
+            <span class="dlf-feedback__prompt-content__text">Spotted an issue? Let us know so we can improve the data.</span>
+        </div>
+        <div class="dlf-feedback__prompt-action">
+            <a href="mailto:digitalLand@communities.gov.uk?subject=Feedback on (dev-plan-buc-wdlp) Wycombe District Local Plan 2019 -- development-plan-document" class="govuk-button dlf-feedback__prompt__link">There is something wrong with the data</a>
+        </div>
+    </div>
+</div>
+
+</div>
 
 <footer class="govuk-footer " role="contentinfo"
 >
@@ -660,5 +735,16 @@ crossorigin="" />
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const mapComponent = new DLMaps.Map($mapElement).init({})
 </script>
-  </body>
+<script>
+    // Initialise back to top
+    var $data_tables = document.querySelectorAll('[data-module*="data-table"]')
+    $data_tables.forEach(data_table => {
+        new window.DLFrontend.ScrollableTables(data_table).init()
+    })
+</script>
+
+<script>
+    const $subNavTabs = document.querySelector('[data-module="dlf-subnav"]')
+    const subNavTabsComponent = new DLFrontend.SubNavTabs($subNavTabs).init({})
+</script>  </body>
 </html>
