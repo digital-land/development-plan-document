@@ -14,7 +14,6 @@ clinical-commissioning-group,Clinical commissioning group,string,1,organisation,
 collection,Collection,string,1,identifier,,,
 combined-authority,Combined authority,string,1,organisation,,,
 company,Company,string,1,organisation,,,
-conservation-area,Conservation area,string,1,development-policy-area,,,
 contact,Contact,string,1,name,,,
 content-type,Content-Type,string,1,string,,,
 contribution-funding-status,Contribution funding status,string,1,category,,,
@@ -37,7 +36,7 @@ development-plan-document,Development plan document,string,1,document,,,
 development-plan-status,Development plan status,string,1,category,,,
 development-plan-timetable,Development plan timetable,string,1,identifier,,,
 development-plan-type,Development plan type,string,1,category,,,
-development-plan-types,Development plan types,string,n,category,,"One or more development plan types",
+development-plan-types,Development plan types,string,n,development-plan-type,,"One or more development plan types",
 development-policies,Development policies,string,n,development-policy,,"A list of development policies",
 development-policy,Development policy,string,1,legal-instrument,,,
 development-policy-area,Development policy area,string,1,geography,,,
@@ -69,6 +68,7 @@ hazardous-substances,Hazardous substances,flag,1,category,,,
 hectares,Hectares,decimal,1,number,,,
 hostname,Hostname,string,1,name,,,
 identifier,Identifier,string,1,value,,,
+infrastructure-funding-statement,Infrastructure Funding Statement,string,1,document,,,
 internal-drainage-board,Internal drainage board,string,1,organisation,,,
 item,JSON,json,1,json,,,
 jobcentre,Jobcentre,string,1,organisation,,,
@@ -106,6 +106,9 @@ parameter,Parameter,string,1,string,,,
 parameters,Parameters,string,n,string,,,
 parent-field,Parent field,string,1,field,,,
 pattern,Pattern,pattern,1,string,,,
+permitted-development-right,Permitted development right,string,1,legislation,,,
+permitted-development-right-class,Permitted development right class,string,1,category,,,
+permitted-development-right-part,Permitted development right part,string,1,category,,,
 phase,Phase,string,1,category,,,
 pipeline,Pipeline,string,1,identifier,,,
 pipelines,Pipelines,string,n,pipeline,,,
@@ -195,6 +198,6 @@ Deliverable,Deliverable,flag,1,category,deliverable,,2019-10-31
 Notes,Notes,text,1,text,notes,,2019-10-31
 FirstAddedDate,FirstAddedDate,datetime,1,datetime,start-date,,2019-10-31
 LastUpdatedDate,LastUpdatedDate,datetime,1,datetime,entry-date,,2019-10-31
-EndDate,EndDate,string,1,datetime,end-date,,2019-10-31
+EndDate,EndDate,datetime,1,datetime,end-date,,2019-10-31
 DevelopmentDescription,Development description,text,1,text,notes,,2019-10-31
 SiteInformation,Site information,text,1,text,notes,,2019-10-31
