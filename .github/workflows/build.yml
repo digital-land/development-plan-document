@@ -21,13 +21,6 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-    # - name: Notify slack started
-    #   id: slack
-    #   uses: digital-land/github-action-slack-notify-build@main
-    #   with:
-    #     channel: dl-github
-    #     status: STARTED
-    #     color: "#00DFFC"
 
     - uses: actions/setup-python@v2
       with:
@@ -43,21 +36,29 @@ jobs:
       with:
         clobber-first: true
 
+    - name: Notify slack success
+      if: success()
+      uses: digital-land/github-action-slack-notify-build@main
+      with:
+        message_id: ${{ steps.slack.outputs.message_id }}
+        channel: dl-github
+        status: SUCCESS
+        color: good
 
-    # - name: Notify slack success
-    #   if: success()
-    #   uses: digital-land/github-action-slack-notify-build@main
-    #   with:
-    #     message_id: ${{ steps.slack.outputs.message_id }}
-    #     channel: dl-github
-    #     status: SUCCESS
-    #     color: good
+    - name: Notify slack fail
+      if: failure()
+      uses: digital-land/github-action-slack-notify-build@main
+      with:
+        message_id: ${{ steps.slack.outputs.message_id }}
+        channel: dl-github
+        status: FAILED
+        color: danger
 
-    # - name: Notify slack fail
-    #   if: failure()
-    #   uses: digital-land/github-action-slack-notify-build@main
-    #   with:
-    #     message_id: ${{ steps.slack.outputs.message_id }}
-    #     channel: dl-github
-    #     status: FAILED
-    #     color: danger
+    - name: Notify slack fail
+      if: failure()
+      uses: digital-land/github-action-slack-notify-build@main
+      with:
+        message_id: ${{ steps.slack.outputs.message_id }}
+        channel: dl-developer
+        status: FAILED
+        color: danger
