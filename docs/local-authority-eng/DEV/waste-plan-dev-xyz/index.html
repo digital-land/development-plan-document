@@ -130,7 +130,7 @@
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                Referenced by (0)
+                0 References
                 </a>
             </li>
         </ul>
@@ -147,11 +147,6 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">geographies
-            </dt>
-            <dd class="govuk-summary-list__value">E10000008
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">start-date
             </dt>
             <dd class="govuk-summary-list__value">                2011-01-01            </dd>
@@ -159,6 +154,15 @@
             <dt class="govuk-summary-list__key">end-date
             </dt>
             <dd class="govuk-summary-list__value">                2030-12-31            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">name
+            </dt>
+            <dd class="govuk-summary-list__value">                Devon Waste Plan            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">geographies
+            </dt>
+            <dd class="govuk-summary-list__value">E10000008
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-plan-document
             </dt>
@@ -175,10 +179,6 @@
 <span title="Organisation identifier: local-authority-eng:DEV" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:DEV)</span>
 </li>
                 </ul>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">name
-            </dt>
-            <dd class="govuk-summary-list__value">                Devon Waste Plan            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -207,28 +207,28 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>development-plan-types</th>
-            <th>end-date</th>
-            <th>organisations</th>
             <th>development-plan-document</th>
-            <th>geographies</th>
-            <th>name</th>
-            <th>start-date</th>
             <th>document-url</th>
+            <th>geographies</th>
+            <th>end-date</th>
+            <th>name</th>
+            <th>development-plan-types</th>
+            <th>organisations</th>
+            <th>start-date</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2021-03-03</td>
             <td><a href="https://github.com/digital-land/development-plan-document-collection/tree/main/transformed/development-plan-document/1866958e42625fb85a4fdbd8573231474c6368f9d614a6ce5b6f8fa5355d1d43.csv#L9">1866958e4262...</a></td>
             <td>8</td>
-                <td>waste-plan</td> 
-                <td>2030-12-31</td> 
-                <td>local-authority-eng:DEV</td> 
                 <td>waste-plan-dev-xyz</td> 
-                <td>E10000008</td> 
-                <td>Devon Waste Plan</td> 
-                <td>2011-01-01</td> 
                 <td>https://www.devon.gov.uk/planning/planning-policies/minerals-and-waste-policy/devon-waste-plan</td> 
+                <td>E10000008</td> 
+                <td>2030-12-31</td> 
+                <td>Devon Waste Plan</td> 
+                <td>waste-plan</td> 
+                <td>local-authority-eng:DEV</td> 
+                <td>2011-01-01</td> 
         </tr>    </tbody>
 </table>
 
@@ -334,8 +334,24 @@
 	</script>
 
 <script>
+    const datasetName = "development-plan-document"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
-    const mapComponent = new DLMaps.Map($mapElement).init({})
+    const $nationalMapLink = document.querySelector('.dl-link-national-map')
+    const mapComponent = new DLMaps.Map($mapElement).init({
+        initGeoJsonLoadCallback: function (urls, featureGroup) {
+            console.log("initial load completed")
+            // do we need to check there isn't more than one shape?
+            const center = featureGroup.getBounds().getCenter()
+            const zoom = mapComponent.map.getZoom()
+            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            console.log(url)
+            if ($nationalMapLink) {
+                // only show this for the datasets we've added to the national map
+                $nationalMapLink.href = url
+                $nationalMapLink.classList.remove("js-hidden")
+            }
+        }
+    })
 </script>
 <script>
     // Initialise back to top

@@ -147,7 +147,7 @@ crossorigin="" />
                 </a>
             </li><li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#referenced-by" data-module-sub-nav="tab">
-                Referenced by (0)
+                0 References
                 </a>
             </li>
         </ul>
@@ -165,6 +165,18 @@ crossorigin="" />
 </li>
                 </ul>            </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">description
+            </dt>
+            <dd class="govuk-summary-list__value">                Gerrards Cross Parish            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">development-plan-document
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">neigh-plan-buc-gerrardscrossndp</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2016-09-22            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-plan-types
             </dt>
             <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/development-plan-type/neighbourhood-plan" class="govuk-link">Neighbourhood Plan</a>
@@ -172,27 +184,15 @@ crossorigin="" />
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">description
-            </dt>
-            <dd class="govuk-summary-list__value">                Gerrards Cross Parish            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">name
             </dt>
             <dd class="govuk-summary-list__value">                Gerrards Cross Neighbourhood Plan            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">development-plan-document
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">neigh-plan-buc-gerrardscrossndp</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">geographies
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001586" class="govuk-link">Gerrards Cross</a>
 <span title="Geography identifier: E04001586" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001586)</span>
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2016-09-22            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -203,19 +203,17 @@ crossorigin="" />
             
 </div>
 
-
     <h2 class="govuk-heading-m">Geographical area</h2>
 
     <div class="dl-map__wrapper"><div 
-        class="dl-map govuk-!-margin-top-4 govuk-!-margin-bottom-2"
-        id="dlMap"
-        data-module="boundary-map"
-        style="height: 460px;" data-geojson-urls="https://digital-land.github.io/parish/E04001586/geometry.geojson"   
-    >
-        <noscript>To view this map, you need to enable JavaScript.</noscript>
-    </div>
+    class="dl-map govuk-!-margin-top-4"
+    id="dlMap"
+    data-module="boundary-map"
+    style="height: 460px;" data-geojson-urls="https://digital-land.github.io/parish/E04001586/geometry.geojson"   
+>
+    <noscript>To view this map, you need to enable JavaScript.</noscript>
 </div>
-
+    </div>
 
     <div class="govuk-!-margin-top-2 govuk-!-margin-bottom-6">
         <a class="dl-page-action-button" href="https://digital-land.github.io/parish/E04001586/geometry.geojson">Download geojson</a>
@@ -238,11 +236,11 @@ crossorigin="" />
             <th>resource</th>
             <th>line</th>
             <th>description</th>
-            <th>development-plan-types</th>
-            <th>organisations</th>
             <th>development-plan-document</th>
+            <th>organisations</th>
             <th>geographies</th>
             <th>name</th>
+            <th>development-plan-types</th>
             <th>start-date</th>
         </tr>
     </thead>
@@ -251,11 +249,11 @@ crossorigin="" />
             <td><a href="https://github.com/digital-land/development-plan-document-collection/tree/main/transformed/development-plan-document/37236e7dbb9f3899ebf5f7c074827b210937a2a515ca426490dc6d364e087052.csv#L43">37236e7dbb9f...</a></td>
             <td>42</td>
                 <td>Gerrards Cross Parish</td> 
-                <td>neighbourhood-plan</td> 
-                <td>neighbourhood-plan-area:gerrards-cross</td> 
                 <td>neigh-plan-buc-gerrardscrossndp</td> 
+                <td>neighbourhood-plan-area:gerrards-cross</td> 
                 <td>E04001586</td> 
                 <td>Gerrards Cross Neighbourhood Plan</td> 
+                <td>neighbourhood-plan</td> 
                 <td>2016-09-22</td> 
         </tr>    </tbody>
 </table>
@@ -362,8 +360,24 @@ crossorigin="" />
 	</script>
 
 <script>
+    const datasetName = "development-plan-document"
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
-    const mapComponent = new DLMaps.Map($mapElement).init({})
+    const $nationalMapLink = document.querySelector('.dl-link-national-map')
+    const mapComponent = new DLMaps.Map($mapElement).init({
+        initGeoJsonLoadCallback: function (urls, featureGroup) {
+            console.log("initial load completed")
+            // do we need to check there isn't more than one shape?
+            const center = featureGroup.getBounds().getCenter()
+            const zoom = mapComponent.map.getZoom()
+            let url = `http://digital-land.github.io/leaflet-spike/?layer=${datasetName}#${center.lat},${center.lng},${zoom}z`
+            console.log(url)
+            if ($nationalMapLink) {
+                // only show this for the datasets we've added to the national map
+                $nationalMapLink.href = url
+                $nationalMapLink.classList.remove("js-hidden")
+            }
+        }
+    })
 </script>
 <script>
     // Initialise back to top
