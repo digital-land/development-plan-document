@@ -157,6 +157,14 @@ crossorigin="" />
 <div class="govuk-grid-row">    <div class="govuk-grid-column-three-quarters"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/development-plan-document/neighbourhood-plan-area/seer-green/neigh-plan-buc-seergreenndp</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">development-plan-document
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">neigh-plan-buc-seergreenndp</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2015-11-05            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">geographies
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001577" class="govuk-link">Seer Green</a>
@@ -178,21 +186,13 @@ crossorigin="" />
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">description
-            </dt>
-            <dd class="govuk-summary-list__value">                Seer Green Parish            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">name
             </dt>
             <dd class="govuk-summary-list__value">                Seer Green Neighbourhood Plan            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">development-plan-document
+            <dt class="govuk-summary-list__key">description
             </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">neigh-plan-buc-seergreenndp</span>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2015-11-05            </dd>
+            <dd class="govuk-summary-list__value">                Seer Green Parish            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -236,12 +236,12 @@ crossorigin="" />
             <th>resource</th>
             <th>line</th>
             <th>geographies</th>
-            <th>development-plan-types</th>
-            <th>start-date</th>
-            <th>development-plan-document</th>
-            <th>name</th>
             <th>description</th>
             <th>organisations</th>
+            <th>start-date</th>
+            <th>development-plan-types</th>
+            <th>development-plan-document</th>
+            <th>name</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -249,12 +249,12 @@ crossorigin="" />
             <td><a href="https://github.com/digital-land/development-plan-document-collection/tree/main/transformed/development-plan-document/37236e7dbb9f3899ebf5f7c074827b210937a2a515ca426490dc6d364e087052.csv#L63">37236e7dbb9f...</a></td>
             <td>62</td>
                 <td>E04001577</td> 
-                <td>neighbourhood-plan</td> 
-                <td>2015-11-05</td> 
-                <td>neigh-plan-buc-seergreenndp</td> 
-                <td>Seer Green Neighbourhood Plan</td> 
                 <td>Seer Green Parish</td> 
                 <td>neighbourhood-plan-area:seer-green</td> 
+                <td>2015-11-05</td> 
+                <td>neighbourhood-plan</td> 
+                <td>neigh-plan-buc-seergreenndp</td> 
+                <td>Seer Green Neighbourhood Plan</td> 
         </tr>    </tbody>
 </table>
 
@@ -269,7 +269,7 @@ crossorigin="" />
             <h3 class="govuk-heading-s">Category</h3>
             <ul class="govuk-list govuk-list--bullet">                <li>
                     <a href=/development-plan-type/neighbourhood-plan>Neighbourhood Plan</a>
-                    <span class="secondary-text data-reference">(115)</span>
+                    <span class="secondary-text data-reference">(15)</span>
                 </li>
 </ul>
 </div>
@@ -370,7 +370,7 @@ crossorigin="" />
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

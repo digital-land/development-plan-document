@@ -157,6 +157,10 @@ crossorigin="" />
 <div class="govuk-grid-row">    <div class="govuk-grid-column-three-quarters"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/development-plan-document/local-authority-eng/BPC/mineral-strategy-bpc-xyz</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">development-plan-document
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">mineral-strategy-bpc-xyz</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisations
             </dt>
             <dd class="govuk-summary-list__value">                <ul class="govuk-list">
@@ -165,13 +169,13 @@ crossorigin="" />
 </li>
                 </ul>            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">development-plan-document
+            <dt class="govuk-summary-list__key">start-date
             </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">mineral-strategy-bpc-xyz</span>            </dd>
+            <dd class="govuk-summary-list__value">                2014-05-06            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">end-date
+            <dt class="govuk-summary-list__key">notes
             </dt>
-            <dd class="govuk-summary-list__value">                2027-12-31            </dd>
+            <dd class="govuk-summary-list__value">                Reviewed 2020, no update needed, further review 2021            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-plan-types
             </dt>
@@ -180,19 +184,15 @@ crossorigin="" />
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
+            <dt class="govuk-summary-list__key">end-date
             </dt>
-            <dd class="govuk-summary-list__value">                2014-05-06            </dd>
+            <dd class="govuk-summary-list__value">                2027-12-31            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">geographies
             </dt>
             <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/local-authority-district/E06000058" class="govuk-link">Bournemouth, Christchurch and Poole</a>
 <span title="Geography identifier: E06000058" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E06000058)</span>
             </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">notes
-            </dt>
-            <dd class="govuk-summary-list__value">                Reviewed 2020, no update needed, further review 2021            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">name
             </dt>
@@ -246,12 +246,12 @@ crossorigin="" />
             <th>geographies</th>
             <th>notes</th>
             <th>document-url</th>
-            <th>development-plan-types</th>
-            <th>start-date</th>
+            <th>organisations</th>
             <th>end-date</th>
+            <th>start-date</th>
+            <th>development-plan-types</th>
             <th>development-plan-document</th>
             <th>name</th>
-            <th>organisations</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -261,12 +261,12 @@ crossorigin="" />
                 <td>E06000058</td> 
                 <td>Reviewed 2020, no update needed, further review 2021</td> 
                 <td>https://www.dorsetcouncil.gov.uk/planning-buildings-land/planning-policy/dorset-county-council/minerals-planning-policy/minerals-strategy.aspx</td> 
-                <td>mineral-plan</td> 
-                <td>2014-05-06</td> 
+                <td>local-authority-eng:BPC</td> 
                 <td>2027-12-31</td> 
+                <td>2014-05-06</td> 
+                <td>mineral-plan</td> 
                 <td>mineral-strategy-bpc-xyz</td> 
                 <td>Minerals Strategy</td> 
-                <td>local-authority-eng:BPC</td> 
         </tr>    </tbody>
 </table>
 
@@ -278,16 +278,16 @@ crossorigin="" />
         <div class="govuk-grid-column-two-thirds">
             <h2 class="govuk-heading-m dlf-subnav__heading">Referenced by</h2>
             <p class="govuk-body">This record is referenced by 2 other planning related data records.</p>
+            <h3 class="govuk-heading-s">Category</h3>
+            <ul class="govuk-list govuk-list--bullet">                <li>
+                    <a href=/development-plan-type/minerals-plan>Minerals plan</a>
+                    <span class="secondary-text data-reference">(13)</span>
+                </li>
+</ul>
             <h3 class="govuk-heading-s">Geography</h3>
             <ul class="govuk-list govuk-list--bullet">                <li>
                     <a href=/local-authority-district/E06000058>Bournemouth, Christchurch and Poole</a>
                     <span class="secondary-text data-reference">(55)</span>
-                </li>
-</ul>
-            <h3 class="govuk-heading-s">Category</h3>
-            <ul class="govuk-list govuk-list--bullet">                <li>
-                    <a href=/development-plan-type/minerals-plan>Minerals plan</a>
-                    <span class="secondary-text data-reference">(113)</span>
                 </li>
 </ul>
 </div>
@@ -388,7 +388,7 @@ crossorigin="" />
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()

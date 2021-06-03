@@ -140,13 +140,9 @@
 <div class="govuk-grid-row">    <div class="govuk-grid-column-three-quarters"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/development-plan-document/local-authority-eng/DEV/mineral-plan-dev-xyz</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">document-url
+            <dt class="govuk-summary-list__key">name
             </dt>
-            <dd class="govuk-summary-list__value">                <a class="govuk-link" href="https://www.devon.gov.uk/planning/planning-policies/minerals-and-waste-policy/devon-minerals-plan">https://www.devon.gov.uk/planning/planning-policies/minerals-and-waste-policy/devon-minerals-plan</a>            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2011-01-01            </dd>
+            <dd class="govuk-summary-list__value">                Devon Minerals Plans            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisations
             </dt>
@@ -163,13 +159,9 @@
 </div>
             </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">end-date
+            <dt class="govuk-summary-list__key">start-date
             </dt>
-            <dd class="govuk-summary-list__value">                2030-12-31            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">name
-            </dt>
-            <dd class="govuk-summary-list__value">                Devon Minerals Plans            </dd>
+            <dd class="govuk-summary-list__value">                2011-01-01            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-plan-document
             </dt>
@@ -179,6 +171,14 @@
             </dt>
             <dd class="govuk-summary-list__value">E10000008
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">document-url
+            </dt>
+            <dd class="govuk-summary-list__value">                <a class="govuk-link" href="https://www.devon.gov.uk/planning/planning-policies/minerals-and-waste-policy/devon-minerals-plan">https://www.devon.gov.uk/planning/planning-policies/minerals-and-waste-policy/devon-minerals-plan</a>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">end-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2030-12-31            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -209,12 +209,12 @@
             <th>line</th>
             <th>geographies</th>
             <th>document-url</th>
-            <th>development-plan-types</th>
-            <th>start-date</th>
+            <th>organisations</th>
             <th>end-date</th>
+            <th>start-date</th>
+            <th>development-plan-types</th>
             <th>development-plan-document</th>
             <th>name</th>
-            <th>organisations</th>
         </tr>
     </thead>
     <tbody>        <tr>
@@ -223,12 +223,12 @@
             <td>7</td>
                 <td>E10000008</td> 
                 <td>https://www.devon.gov.uk/planning/planning-policies/minerals-and-waste-policy/devon-minerals-plan</td> 
-                <td>mineral-plan</td> 
-                <td>2011-01-01</td> 
+                <td>local-authority-eng:DEV</td> 
                 <td>2030-12-31</td> 
+                <td>2011-01-01</td> 
+                <td>mineral-plan</td> 
                 <td>mineral-plan-dev-xyz</td> 
                 <td>Devon Minerals Plans</td> 
-                <td>local-authority-eng:DEV</td> 
         </tr>    </tbody>
 </table>
 
@@ -243,7 +243,7 @@
             <h3 class="govuk-heading-s">Category</h3>
             <ul class="govuk-list govuk-list--bullet">                <li>
                     <a href=/development-plan-type/minerals-plan>Minerals plan</a>
-                    <span class="secondary-text data-reference">(113)</span>
+                    <span class="secondary-text data-reference">(13)</span>
                 </li>
 </ul>
 </div>
@@ -344,7 +344,7 @@
     const $mapElement = document.querySelector('[data-module="boundary-map"]')
     const $nationalMapLink = document.querySelector('.dl-link-national-map')
     const mapComponent = new DLMaps.Map($mapElement).init({
-        initGeoJsonLoadCallback: function (urls, featureGroup) {
+        initZoomCallback: function (featureGroup) {
             console.log("initial load completed")
             // do we need to check there isn't more than one shape?
             const center = featureGroup.getBounds().getCenter()
