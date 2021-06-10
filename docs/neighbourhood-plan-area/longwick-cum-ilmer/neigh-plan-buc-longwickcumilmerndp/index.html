@@ -11,7 +11,10 @@
 <link rel="shortcut icon" sizes="32x32" href="/images/favicon-32x32.png" type="image/png">
 <link rel="shortcut icon" sizes="16x16" href="/images/favicon-16x16.png" type="image/png">
 <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
-	<meta name="digital-land:template" content="page-per-thing/record.html"><!-- should make this optional, no need to load if not showing a map -->
+	<meta name="digital-land:template" content="page-per-thing/record.html">
+<script src="https://polyfill.io/v3/polyfill.min.js?features=fetch%2CPromise%2Ces6%2Ces5%2Ces2015%2Ces2016%2CURL%2CURLSearchParams%2CObject.entries%2CObject.fromEntries%2CAbortController"></script>
+
+<!-- should make this optional, no need to load if not showing a map -->
 <link rel="stylesheet" href="https://unpkg.com/leaflet@1.6.0/dist/leaflet.css"
 integrity="sha512-xwE/Az9zrjBIphAcBb3F6JVqxf46+CDLwfLMHloNu6KEQCAWi6HcDUbeOfBIptF7tcCzusKFjFw2yuvEpDL9wQ=="
 crossorigin="" />
@@ -157,15 +160,17 @@ crossorigin="" />
 <div class="govuk-grid-row">    <div class="govuk-grid-column-three-quarters"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/development-plan-document/neighbourhood-plan-area/longwick-cum-ilmer/neigh-plan-buc-longwickcumilmerndp</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">geographies
-            </dt>
-            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001609" class="govuk-link">Longwick-cum-Ilmer</a>
-<span title="Geography identifier: E04001609" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001609)</span>
-            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">name
             </dt>
             <dd class="govuk-summary-list__value">                Longwick-cum-Ilmer Parish Neighbourhood Plan 2017-2033            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">document-url
+            </dt>
+            <dd class="govuk-summary-list__value">                <a class="govuk-link" href="https://www.wycombe.gov.uk/uploads/public/documents/Planning/Neighbourhood-planning/Longwick-cum-Ilmer-Parish-Neighbourhood-Plan-2017-2033.pdf">https://www.wycombe.gov.uk/uploads/public/documents/Planning/Neighbourhood-planning/Longwick-cum-Ilmer-Parish-Neighbourhood-Plan-2017-2033.pdf</a>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">description
+            </dt>
+            <dd class="govuk-summary-list__value">                Longwick Parish            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-policies
             </dt>
@@ -228,25 +233,15 @@ crossorigin="" />
   </div>
 </details>            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">document-url
-            </dt>
-            <dd class="govuk-summary-list__value">                <a class="govuk-link" href="https://www.wycombe.gov.uk/uploads/public/documents/Planning/Neighbourhood-planning/Longwick-cum-Ilmer-Parish-Neighbourhood-Plan-2017-2033.pdf">https://www.wycombe.gov.uk/uploads/public/documents/Planning/Neighbourhood-planning/Longwick-cum-Ilmer-Parish-Neighbourhood-Plan-2017-2033.pdf</a>            </dd>
-        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">end-date
             </dt>
             <dd class="govuk-summary-list__value">                2033-12-31            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">description
+            <dt class="govuk-summary-list__key">geographies
             </dt>
-            <dd class="govuk-summary-list__value">                Longwick Parish            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">start-date
-            </dt>
-            <dd class="govuk-summary-list__value">                2017-01-01            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">development-plan-document
-            </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">neigh-plan-buc-longwickcumilmerndp</span>            </dd>
+            <dd class="govuk-summary-list__value"><a href="https://digital-land.github.io/parish/E04001609" class="govuk-link">Longwick-cum-Ilmer</a>
+<span title="Geography identifier: E04001609" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Geography identifier is </span>E04001609)</span>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">organisations
             </dt>
@@ -256,12 +251,20 @@ crossorigin="" />
 </li>
                 </ul>            </dd>
         </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">development-plan-document
+            </dt>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">neigh-plan-buc-longwickcumilmerndp</span>            </dd>
+        </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">development-plan-types
             </dt>
             <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/development-plan-type/neighbourhood-plan" class="govuk-link">Neighbourhood Plan</a>
 <span title="development-plan-types identifier: neighbourhood-plan" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">development-plan-types identifier is </span>neighbourhood-plan)</span>
 </div>
             </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">start-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2017-01-01            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -304,15 +307,15 @@ crossorigin="" />
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
-            <th>development-policies</th>
-            <th>organisations</th>
-            <th>name</th>
-            <th>description</th>
             <th>development-plan-document</th>
             <th>development-plan-types</th>
-            <th>start-date</th>
-            <th>geographies</th>
+            <th>name</th>
             <th>document-url</th>
+            <th>organisations</th>
+            <th>start-date</th>
+            <th>description</th>
+            <th>geographies</th>
+            <th>development-policies</th>
             <th>end-date</th>
         </tr>
     </thead>
@@ -320,15 +323,15 @@ crossorigin="" />
             <td>2020-12-09</td>
             <td><a href="https://github.com/digital-land/development-plan-document-collection/tree/main/transformed/development-plan-document/37236e7dbb9f3899ebf5f7c074827b210937a2a515ca426490dc6d364e087052.csv#L54">37236e7dbb9f...</a></td>
             <td>53</td>
-                <td>longwickcumilmerndp-A1;longwickcumilmerndp-A2;longwickcumilmerndp-A3;longwickcumilmerndp-A4;longwickcumilmerndp-A5;longwickcumilmerndp-A6;longwickcumilmerndp-L1;longwickcumilmerndp-L2;longwickcumilmerndp-L3;longwickcumilmerndp-L4;longwickcumilmerndp-L5;longwickcumilmerndp-L6</td> 
-                <td>neighbourhood-plan-area:longwick-cum-ilmer</td> 
-                <td>Longwick-cum-Ilmer Parish Neighbourhood Plan 2017-2033</td> 
-                <td>Longwick Parish</td> 
                 <td>neigh-plan-buc-longwickcumilmerndp</td> 
                 <td>neighbourhood-plan</td> 
-                <td>2017-01-01</td> 
-                <td>E04001609</td> 
+                <td>Longwick-cum-Ilmer Parish Neighbourhood Plan 2017-2033</td> 
                 <td>https://www.wycombe.gov.uk/uploads/public/documents/Planning/Neighbourhood-planning/Longwick-cum-Ilmer-Parish-Neighbourhood-Plan-2017-2033.pdf</td> 
+                <td>neighbourhood-plan-area:longwick-cum-ilmer</td> 
+                <td>2017-01-01</td> 
+                <td>Longwick Parish</td> 
+                <td>E04001609</td> 
+                <td>longwickcumilmerndp-A1;longwickcumilmerndp-A2;longwickcumilmerndp-A3;longwickcumilmerndp-A4;longwickcumilmerndp-A5;longwickcumilmerndp-A6;longwickcumilmerndp-L1;longwickcumilmerndp-L2;longwickcumilmerndp-L3;longwickcumilmerndp-L4;longwickcumilmerndp-L5;longwickcumilmerndp-L6</td> 
                 <td>2033-12-31</td> 
         </tr>    </tbody>
 </table>
