@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c">     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-<link rel="manifest" href="/site.webmanifest">
 <link rel="shortcut icon" sizes="48x48" href="/images/favicon.ico" type="image/x-icon">
 <link rel="shortcut icon" sizes="32x32" href="/images/favicon-32x32.png" type="image/png">
 <link rel="shortcut icon" sizes="16x16" href="/images/favicon-16x16.png" type="image/png">
@@ -123,8 +122,7 @@
                 <a class="dlf-subnav__list-item__link" href="#record" data-module-sub-nav="tab">
                 Record
                 </a>
-            </li>
-            <li class="dlf-subnav__list-item">
+            </li>            <li class="dlf-subnav__list-item">
                 <a class="dlf-subnav__list-item__link" href="#history" data-module-sub-nav="tab">
                 History
                 </a>
@@ -140,17 +138,12 @@
 <div class="govuk-grid-row">    <div class="govuk-grid-column-three-quarters"><article class="data-record govuk-!-margin-bottom-6">
     <h4 class="govuk-heading-s data-record__identifier">#/development-plan-document/local-authority-eng/BUC/dev-plan-buc-blp</h4>
     <dl class="govuk-summary-list data-record__properties">            <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">end-date
+            <dt class="govuk-summary-list__key">development-plan-types
             </dt>
-            <dd class="govuk-summary-list__value">                2040-12-31            </dd>
-        </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">organisations
-            </dt>
-            <dd class="govuk-summary-list__value">                <ul class="govuk-list">
-                    <li><a href="https://digital-land.github.io/organisation/local-authority-eng/BUC" class="govuk-link">Buckinghamshire Council</a>
-<span title="Organisation identifier: local-authority-eng:BUC" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:BUC)</span>
-</li>
-                </ul>            </dd>
+            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/development-plan-type/local-plan" class="govuk-link">Local Plan</a>
+<span title="development-plan-types identifier: local-plan" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">development-plan-types identifier is </span>local-plan)</span>
+</div>
+            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">description
             </dt>
@@ -160,9 +153,17 @@
             </dt>
             <dd class="govuk-summary-list__value">                2020-04-01            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">development-plan-document
+            <dt class="govuk-summary-list__key">organisations
             </dt>
-            <dd class="govuk-summary-list__value">                <span class="dl-select-all">dev-plan-buc-blp</span>            </dd>
+            <dd class="govuk-summary-list__value">                <ul class="govuk-list">
+                    <li><a href="https://digital-land.github.io/organisation/local-authority-eng/BUC" class="govuk-link">Buckinghamshire Council</a>
+<span title="Organisation identifier: local-authority-eng:BUC" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">Organisation identifier is </span>local-authority-eng:BUC)</span>
+</li>
+                </ul>            </dd>
+        </div>        <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">end-date
+            </dt>
+            <dd class="govuk-summary-list__value">                2040-12-31            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">geographies
             </dt>
@@ -173,12 +174,9 @@
             </dt>
             <dd class="govuk-summary-list__value">                Buckinghamshire Local Plan            </dd>
         </div>        <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">development-plan-types
+            <dt class="govuk-summary-list__key">development-plan-document
             </dt>
-            <dd class="govuk-summary-list__value"><div><a href="https://digital-land.github.io/development-plan-type/local-plan" class="govuk-link">Local Plan</a>
-<span title="development-plan-types identifier: local-plan" class="govuk-!-font-size-16 secondary-text data-reference">(<span class="govuk-visually-hidden">development-plan-types identifier is </span>local-plan)</span>
-</div>
-            </dd>
+            <dd class="govuk-summary-list__value">                <span class="dl-select-all">dev-plan-buc-blp</span>            </dd>
         </div>        <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">entry-date
             </dt>
@@ -195,9 +193,7 @@
 <ul class="govuk-list govuk-list--bullet">
     <li><a href="https://digital-land.github.io/specification/schema/development-plan-document/">View the development-plan-document schema</a></li></ul>
 
-</div>
-
-<div id="history"><h2 class="govuk-heading-m dlf-subnav__heading">History</h2>
+</div><div id="history"><h2 class="govuk-heading-m dlf-subnav__heading">History</h2>
 <div class="data-table__wrapper" data-module="data-table">
     <div class="data-table-left-shadow with-transition"></div>
     <div class="wide-table">
@@ -207,28 +203,28 @@
             <th>entry-date</th>
             <th>resource</th>
             <th>line</th>
+            <th>description</th>
+            <th>end-date</th>
+            <th>development-plan-types</th>
             <th>organisations</th>
             <th>name</th>
-            <th>start-date</th>
             <th>development-plan-document</th>
+            <th>start-date</th>
             <th>geographies</th>
-            <th>development-plan-types</th>
-            <th>end-date</th>
-            <th>description</th>
         </tr>
     </thead>
     <tbody>        <tr>
             <td>2020-12-08</td>
             <td><a href="https://github.com/digital-land/development-plan-document-collection/tree/main/transformed/development-plan-document/37236e7dbb9f3899ebf5f7c074827b210937a2a515ca426490dc6d364e087052.csv#L4">37236e7dbb9f...</a></td>
             <td>3</td>
+                <td>Whole Buckinghamshire Council area</td> 
+                <td>2040-12-31</td> 
+                <td>local-plan</td> 
                 <td>local-authority-eng:BUC</td> 
                 <td>Buckinghamshire Local Plan</td> 
-                <td>2020-04-01</td> 
                 <td>dev-plan-buc-blp</td> 
+                <td>2020-04-01</td> 
                 <td>E06000060</td> 
-                <td>local-plan</td> 
-                <td>2040-12-31</td> 
-                <td>Whole Buckinghamshire Council area</td> 
         </tr>    </tbody>
 </table>
 
