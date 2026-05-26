@@ -18,7 +18,7 @@ endif
 endif
 
 ifeq ($(DATASET_URL),)
-DATASET_URL='https://collection-dataset.s3.eu-west-2.amazonaws.com/$(COLLECTION)-collection/dataset/$(DATASET).sqlite3'
+DATASET_URL='https://$(COLLECTION_DATASET_BUCKET_NAME).s3.eu-west-2.amazonaws.com/$(COLLECTION)-collection/dataset/$(DATASET).sqlite3'
 endif
 
 ifeq ($(DATASET_DIR),)
@@ -70,7 +70,7 @@ clobber-docs::
 	rm -rf $(DOCS_DIR)
 
 makerules::
-	curl -qfsL '$(SOURCE_URL)/makerules/main/render.mk' > makerules/render.mk
+	curl -qfsL '$(MAKERULES_URL)render.mk' > makerules/render.mk
 
 commit-docs::
 	git add docs
